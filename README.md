@@ -82,5 +82,3 @@ This implementation ensures:
 *  Strong transactional integrity
 
 ---
-
-لو ع R
