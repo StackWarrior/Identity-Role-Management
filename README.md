@@ -72,13 +72,5 @@ All role operations are executed within a database transaction.
 
 ---
 
-## Summary
 
-This implementation ensures:
 
-*  No duplicate roles
-*  Safe role removal
-*  Instant role updates in session
-*  Strong transactional integrity
-
----
