@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Identity_Role_Management.ViewModels.UserViewModel>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="container mt-4">
+    <h2>Users</h2>
+
+    @if (TempData["success"] is string msg)
+    {
+        <div class="alert alert-success">@msg</div>
+    }
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @if (user.Roles.Count == 0)
+                        {
+                            <span class="text-muted">None</span>
+                        }
+                        else
+                        {
+                            @foreach (var role in user.Roles)
+                            {
+                                <span class="badge bg-primary me-1">@role</span>
+                            }
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="Roles"
+                           asp-action="ManageUserRoles"
+                           asp-route-userId="@user.Id"
+                           class="btn btn-sm btn-outline-primary">
+                            Manage Roles
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+@page "/Identity/Account/AccessDenied"
+@model Identity_Role_Management.Pages.Identity.Account.AccessDeniedModel
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="container mt-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-danger shadow">
+                <div class="card-body p-5">
+                    <h1 class="display-1 text-danger"><i class="bi bi-shield-lock-fill"></i></h1>
+                    <h2 class="text-danger">Access Denied</h2>
+                    <p class="lead mt-3">
+                        Sorry, you do not have permission to view this resource. 
+                        This area is restricted to authorized users only.
+                    </p>
+                    <hr />
+                    <div class="mt-4">
+                        <a href="/" class="btn btn-outline-secondary">Back to Home</a>
+                        <a href="/Identity/Account/Login" class="btn btn-danger">Login with different account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .card {
+        border-radius: 15px;
+    }
+</style>
